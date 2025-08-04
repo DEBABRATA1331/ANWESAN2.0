@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Acknowledgement | Anwesan 2.0</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0faff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+  .certificate {
+  background: #ffffff; /* Light background */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3); /* Neon outer glow */
+  text-align: center;
+  max-width: 600px;
+  animation: fadeIn 1.5s ease-in-out;
+  border: 3px dashed #00f2ff; /* Neon blue border */
+  position: relative;
+  color: #111; /* Dark text for contrast */
+}
+
+/* Optional: neon-style header text */
+.certificate h1, 
+.certificate h2 {
+  color: #00f2ff;
+  text-shadow:
+    0 0 5px #00f2ff,
+    0 0 10px #00f2ff,
+    0 0 20px #00c6ff;
+}
+
+
+    .certificate h2 {
+      color: #0077b6;
+      font-size: 26px;
+    }
+
+    .certificate p {
+      font-size: 18px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .note {
+      font-style: italic;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    .ieee-logo {
+	position: absolute;
+	top: 20px;
+	middle: 20px;
+	height: 40px;
+	z-index: 1;
+	}
+
+
+    .quote {
+      font-size: 15px;
+      margin-top: 10px;
+      color: #0077b6;
+    }
+
+    .fun-facts {
+      margin-top: 25px;
+      background: #e0f7ff;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .join-link {
+      margin-top: 20px;
+    }
+
+    .join-link a {
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="certificate">
+    <img src="static/IEEE VSSUT SB Logo.png" alt="IEEE Logo" class="ieee-logo">
+    <h2>Thank you for registering, {{ name }}!</h2>
+    {% if email %}
+      <p>Email: <strong>{{ email }}</strong></p>
+    {% endif %}
+    <p>Welcome to <strong>IEEE VSSUT SB</strong>!</p>
+    <p>You are now officially part of <strong>अन्वेषण 2.0 - The Final Induction</strong></p>
+    <p><strong>Event Details:</strong><br>
+    📅 Date: August 11 - August 14, 2025<br>
+    🕔 Time: 5:00 PM - 6:15 PM<br>
+    📍 Venue: IEEE Room (B-32), E-learning Centre</p>
+
+    <p class="note">This page serves as your digital acknowledgement certificate.</p>
+    <p class="quote">"Advancing Technology for Humanity"</p>
+
+    <div class="fun-facts">
+      IEEE VSSUT SB is home to over 150 active student members,<br>
+      hosting 30+ events annually, including workshops, hackathons,<br>
+      and international symposiums.<br>
+      <strong>The best student branch in BBSR Section.</strong>
+    </div>
+
+    <div class="join-link">
+      <a href="https://chat.whatsapp.com/LTwj1gLF5y72IsPy3BKJTr?mode=ac_t" target="_blank">Join Our WhatsApp Group</a>
+    </div>
+  </div>
+
+  <!-- 🎉 Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  </script>
+</body>
+</html>

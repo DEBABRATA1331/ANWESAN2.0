@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anwesan 2.0 | IEEE VSSUT SB</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at center, #000 0%, #0d0d26 100%);
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .ieee-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 3;
+      width: 80px;
+      filter: drop-shadow(0 0 5px #00ffff);
+    }
+
+    .anweshan-logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 120px;
+      z-index: 3;
+      filter: drop-shadow(0 0 10px #00ffff);
+      animation: floatLogo 3s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 120px auto;
+      padding: 40px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #00ffff;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #00e6e6, 0 0 40px #00e6e6, 0 0 60px #00e6e6;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: #000;
+      background: #00ffff;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    a:hover {
+      transform: scale(1.1);
+      background: #00e6e6;
+      box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff;
+    }
+
+    .bg-glow {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle, #00ffff55 0%, transparent 70%);
+      animation: pulse 6s infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+      100% {
+        transform: scale(1.3);
+        opacity: 0.7;
+      }
+    }
+
+    .insta-section {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 80px;
+    }
+
+    .insta-section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    blockquote.instagram-media {
+      margin: auto;
+      max-width: 540px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffff55, 0 0 40px #00ffff22;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+  <div class="bg-glow"></div>
+
+  <!-- IEEE Logo -->
+  <img src="{{ url_for('static', filename='IEEE VSSUT SB Logo.png') }}" alt="IEEE Logo" class="ieee-logo">
+
+  <!-- Anwesan Logo (Floating Image) -->
+  <img src="{{ url_for('static', filename='Anwesan2025.png.png') }}" alt="Anwesan 2.0" class="anweshan-logo">
+
+  <!-- Main Section -->
+  <div class="container">
+    <h1>Welcome to Anwesan 2.0</h1>
+    <p>This is the official induction portal of IEEE VSSUT Student Branch.</p>
+    <a href="/login">Login to Register</a>
+    <a href="/excom">Meet the Team</a>
+  </div>
+
+  <!-- 🎠 Carousel -->
+  <div id="onboardingCarousel" class="carousel slide mb-5 mt-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <h4>Welcome to Anweshan 2.0 2025</h4>
+        <p>After selection, you'll become a part of the IEEE VSSUT family and gain access to exclusive technical events, workshops, national-level competitions, and leadership opportunities..</p>
+      </div>
+      <div class="carousel-item">
+        <h4>Speaker Sessions</h4>
+        <p>Meet top minds in AI, robotics, and research.</p>
+      </div>
+      <div class="carousel-item">
+        <h4>Hackathons & Workshops</h4>
+        <p>Build, learn, and create with peers and mentors.</p>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#onboardingCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#onboardingCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Main Welcome Card -->
+  <div class="welcome-box text-center" id="mainBox">
+
+    <img src="{{ url_for('static', filename='Anwesan2025.png.png') }}" alt="Anweshan Logo" style="height: 60px; margin-bottom: 20px;">
+
+    <div class="logo-circle">⚡</div>
+    <h2 class="text-primary mb-2">Anweshan 2025</h2>
+    <p class="text-muted">Presented by IEEE SB – Dive into a festival of innovation</p>
+
+    <ul class="list-unstyled mt-4">
+      <li>Tech Talks & Research</li>
+      <li>Gaming & Fun Events</li>
+      <li>Student Showcases</li>
+      <li>Prizes & Networking</li>
+    </ul>
+
+    <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg w-100 mt-4">Register Now</a>
+	<!-- Testimonials -->
+    <div class="mt-5 text-start">
+      <h5 class="text-secondary">💬 Past Participants Say</h5>
+      <blockquote class="blockquote mt-3">
+        <p>"IEEE VSSUT helped me land my 1st Hackathon Win!"</p>
+        <footer class="blockquote-footer">Shreya, IIT Bombay</footer>
+      </blockquote>
+      <blockquote class="blockquote mt-3">
+        <p>"The vibe, the people, the learning – unmatched."</p>
+        <footer class="blockquote-footer">Aman, NIT Trichy</footer>
+      </blockquote>
+
+      <h6 class="mt-4">Past Collaboration With:</h6>
+      <div class="d-flex align-items-center">
+        <img src="{{ url_for('static', filename='partners/DRDO.png') }}" class="partner-logo" alt="AIIMS">
+        <img src="{{ url_for('static', filename='partners/P.png') }}" class="partner-logo" alt="IWMI">
+        <img src="{{ url_for('static', filename='partners/ieee.png') }}" class="partner-logo" alt="IEEE">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Instagram Reel Section -->
+  <div class="insta-section">
+    <h2>🎬 Anwesan Launch Reel</h2>
+    <blockquote class="instagram-media"
+      data-instgrm-captioned
+      data-instgrm-permalink="https://www.instagram.com/reel/DMmQ3WXz9G2/?utm_source=ig_embed&amp;utm_campaign=loading"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; margin: 0 auto;">
+    </blockquote>
+  </div>
+  <!-- Scripts -->
+<script>
+  // GSAP scroll animation
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from("#mainBox", {
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    scrollTrigger: "#mainBox"
+  });
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem('theme', document.body.classList.contains("dark-mode") ? 'dark' : 'light');
+  }
+
+  window.onload = () => {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add("dark-mode");
+    }
+
+    // Countdown
+    const eventDate = new Date("2025-08-10T00:00:00").getTime();
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        countdown.innerHTML = "🚀 Event Started!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdown.innerHTML = `${days} Days ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  };
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Instagram Script -->
+  <script async src="//www.instagram.com/embed.js"></script>
+
+</body>
+</html>
