@@ -96,6 +96,13 @@
   animation: pulseGlow 2s ease-in-out infinite;
   backdrop-filter: blur(10px);
 }
+<style>
+.partner-logo {
+  height: 60px;
+  margin-right: 15px;
+  object-fit: contain;
+}
+</style>
 
 /* Neon Pulse Animation */
 @keyframes pulseGlow {
