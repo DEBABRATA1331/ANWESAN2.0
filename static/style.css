@@ -35,3 +35,21 @@
   filter: drop-shadow(0 0 4px #00ffffaa);
   object-fit: contain;
 }
+.ieee-top-logo {
+  max-width: 120px;
+  width: 40vw;
+  filter: drop-shadow(0 0 6px #00ffff);
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+.poster-image {
+  max-width: 95%;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.poster-image:hover {
+  transform: scale(1.02);
+}
